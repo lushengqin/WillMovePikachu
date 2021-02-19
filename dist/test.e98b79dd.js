@@ -117,24 +117,77 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"test.js":[function(require,module,exports) {
-var string = "\n.san{\n    width: 0;\n    border: 10px solid black;\n    border-color: black transparent transparent transparent;\n    position: absolute;\n    top:100%;\n    transform: translate(-50%,-50%);\n}\n.san::after{\n    content: '';\n    clear: both;\n    display: block;\n    background-color: black;\n    position: absolute;\n    width: 20px;\n    height: 8px;\n    top: 100%;\n    transform: translate(-50%,-220%);\n    border-radius:10px 10px 0 0;\n}\n\n.eye{\n    width: 64px;\n    height: 64px;\n    border: 2px solid black;\n    position: absolute;\n    top: 25%;\n    left: 50%;\n    /* transform: translate(-50%); */\n    margin-left: -32px;\n    border-radius: 50%;\n    background-color: #2e2e2e;\n    \n}\n@media screen and (min-width:500px){\n    .eye{\n    top: 15%;\n    }\n}\n.eye.left{\n    transform: translateX(100px);\n    \n}\n.eye::before{\n    content: '';\n    display: block;\n    clear: both;\n    width: 26px;\n    height: 26px;\n    background-color: #fff;\n    position: absolute;\n    border-radius: 50%;\n    top: 3px;\n    left: 20%;\n    border: 2px solid #000;\n}\n.eye.right{\n    transform: translateX(-100px);\n}\n.mouth{\n    width: 200px;\n    height: 140px;\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translateX(-50%);\n    overflow: hidden;\n}\n@media screen and (min-width:500px){\n.mouth{\ntop: 22%;\n}\n    \n}\n.up{\n    width: inherit;\n    height: 100%;\n    position: absolute;\n    left: -1px;\n    top: 0;\n}\n.up .lip{\n    position: absolute;\n    top: -5px;\n    margin-left: 1px;\n    border: 2px solid black;\n    border-color:  transparent transparent black transparent;\n    width: 100px;\n    height: 20px;\n    background-color: #ffdb00;\n    z-index: 1;\n}\n.up .lip::after{\n    content: '';\n    clear: both;\n    display: block;\n    position: absolute;\n    top: -14px;\n    border: 5px solid  #ffdb00;\n    background-color: #ffdb00;\n    height: 30px;\n    \n}\n.up .lip.left::after{\n    left:48%;\n}\n.up .lip.right::after{\n    right:98%;\n}\n.up .lip.right{\n    border-radius: 0 0  20px 0;\n    right: 50%;\n    transform: translateX(100%) rotate(14deg);\n}\n.up .lip.left{\n    border-radius: 0 0 0 20px;\n    left: 50%;\n    transform: translateX(-100%) rotate(-14deg);\n}\n\n\n.down{\n    width: 150px;\n    height: 1000px;\n    position: absolute;\n    border: 2px solid black;\n    bottom: 0;\n    left: 50%;\n    margin-left: -75px;\n    border-radius: 90px/350px;\n    background-color: #a61108;\n    overflow: hidden;\n}\n.yuan1{\n    width: 200px;\n    height: 200px;\n    position: absolute;\n    top: 89%;\n    left: 50%;\n    margin-left: -100px;\n    border-radius: 50%;\n    background-color: #ff5b5d;\n}\n\n.face{\n    width: 88px;\n    height: 88px;\n    border: 2px solid black;\n    position: absolute;\n    top: 56%;\n    left: 50%;\n    border-radius: 50%;\n    margin-left: -44px;\n    z-index: 2;\n    background-color: #fe1800;\n\n}\n@media screen and (min-width:500px){\n.face{\ntop: 24%;\n}\n    \n}\n.face.left{\n    transform: translateX(-170px);\n}\n\n.face.right{\n    transform: translateX(170px);\n}\n";
-var n = 0;
-demo.innerText = string.substr(0, n); //找到string的子字符串
+})({"css.js":[function(require,module,exports) {
+"use strict";
 
-demo2.innerHTML = string.substr(0, n);
-var id = setInterval(function () {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var string = ".san{\n    width: 0;\n    border: 10px solid black;\n    border-color: black transparent transparent transparent;\n    position: absolute;\n    top:100%;\n    transform: translate(-50%,-50%);\n}\n.san::after{\n    content: '';\n    clear: both;\n    display: block;\n    background-color: black;\n    position: absolute;\n    width: 20px;\n    height: 8px;\n    top: 100%;\n    transform: translate(-50%,-220%);\n    border-radius:10px 10px 0 0;\n}\n\n.eye{\n    width: 64px;\n    height: 64px;\n    border: 2px solid black;\n    position: absolute;\n    top: 15%;\n    left: 50%;\n    /* transform: translate(-50%); */\n    margin-left: -32px;\n    border-radius: 50%;\n    background-color: #2e2e2e;\n\n}\n.eye.left{\n    transform: translateX(100px);\n\n}\n.eye::before{\n    content: '';\n    display: block;\n    clear: both;\n    width: 26px;\n    height: 26px;\n    background-color: #fff;\n    position: absolute;\n    border-radius: 50%;\n    top: 3px;\n    left: 20%;\n    border: 2px solid #000;\n}\n.eye.right{\n    transform: translateX(-100px);\n}\n.mouth{\n    width: 200px;\n    height: 140px;\n    position: absolute;\n    top: 22%;\n    left: 50%;\n    transform: translateX(-50%);\n    overflow: hidden;\n}\n.up{\n    width: inherit;\n    height: 100%;\n    position: absolute;\n    left: -1px;\n    top: 0;\n}\n.up .lip{\n    position: absolute;\n    top: -5px;\n    margin-left: 1px;\n    border: 2px solid black;\n    border-color:  transparent transparent black transparent;\n    width: 100px;\n    height: 20px;\n    background-color: #ffdb00;\n    z-index: 1;\n}\n.up .lip::after{\n    content: '';\n    clear: both;\n    display: block;\n    position: absolute;\n    top: -14px;\n    border: 5px solid  #ffdb00;\n    background-color: #ffdb00;\n    height: 30px;\n\n}\n.up .lip.left::after{\n    left:48%;\n}\n.up .lip.right::after{\n    right:98%;\n}\n.up .lip.right{\n    border-radius: 0 0  20px 0;\n    right: 50%;\n    transform: translateX(100%) rotate(14deg);\n}\n.up .lip.left{\n    border-radius: 0 0 0 20px;\n    left: 50%;\n    transform: translateX(-100%) rotate(-14deg);\n}\n\n\n.down{\n    width: 150px;\n    height: 1000px;\n    position: absolute;\n    border: 2px solid black;\n    bottom: 0;\n    left: 50%;\n    margin-left: -75px;\n    border-radius: 90px/350px;\n    background-color: #a61108;\n    overflow: hidden;\n}\n.yuan1{\n    width: 200px;\n    height: 200px;\n    position: absolute;\n    top: 89%;\n    left: 50%;\n    margin-left: -100px;\n    border-radius: 50%;\n    background-color: #ff5b5d;\n}\n\n.face{\n    width: 88px;\n    height: 88px;\n    border: 2px solid black;\n    position: absolute;\n    top: 24%;\n    left: 50%;\n    border-radius: 50%;\n    margin-left: -44px;\n    z-index: 2;\n    background-color: #fe1800;\n\n}\n.face.left{\n    transform: translateX(-170px);\n}\n\n.face.right{\n    transform: translateX(170px);\n}\n\n";
+var _default = string;
+exports.default = _default;
+},{}],"test.js":[function(require,module,exports) {
+"use strict";
+
+var _css = _interopRequireDefault(require("./css"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var n = 0;
+demo.innerText = _css.default.substring(0, n); //找到string的子字符串
+
+demo2.innerHTML = _css.default.substring(0, n);
+var time = 100;
+
+var run = function run() {
   n += 1;
 
-  if (n > string.length - 1) {
+  if (n > _css.default.length) {
     window.clearInterval(id); //如果超过文字的长度 就取消定时器
   }
 
-  demo.innerText = string.substr(0, n);
-  demo2.innerHTML = string.substr(0, n);
+  demo.innerText = _css.default.substring(0, n);
+  demo2.innerHTML = _css.default.substring(0, n);
   demo.scrollTop = demo.scrollHeight; //它的滚动高度
-}, 0);
-},{}],"C:/Users/pc/AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+};
+
+var clearI = function clearI() {
+  window.clearInterval(id);
+};
+
+var play = function play() {
+  return setInterval(run, time);
+};
+
+var id = play();
+
+btnPause.onclick = function () {
+  clearI(); //清除定时器函数
+};
+
+btnPlay.onclick = function () {
+  id = play();
+};
+
+btnSlow.onclick = function () {
+  clearI();
+  time = 300;
+  id = play();
+};
+
+btnInter.onclick = function () {
+  clearI();
+  time = 100;
+  id = play();
+};
+
+btnSpeed.onclick = function () {
+  clearI();
+  time = 0;
+  id = play();
+};
+},{"./css":"css.js"}],"C:/Users/pc/AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

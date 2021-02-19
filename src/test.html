@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>测试</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0">
     <style>
+        body{
+            line-height: 1.8;
+            font-size: 18px;
+            color: #666;
+            position: relative;
+        }
         *{
             margin: 0;
             padding: 0;
@@ -12,14 +19,10 @@
         *::before,*::after{
             box-sizing: border-box;
         }
-        body{
-            line-height: 1.8;
-            font-size: 18px;
-            color: #666;
-        }
+
         .nose{
             position: absolute;
-            top: 40%;
+            top: 20%;
             left: 50%;
             border: 1px solid transparent;
         }
@@ -52,12 +55,12 @@
             animation: wave 400ms infinite linear;
         }
         #demo{
-            width: 50vw;
-            height: 86vh;
-            padding-left: 4%;
-            padding-right: 4%;
-            margin-top: 4%;
-            margin-bottom: 4%;
+            width: 100vw;
+            height: 45vh;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
             position: fixed;
             overflow-y: auto;
             top: 0;
@@ -67,50 +70,48 @@
             display:none;/*ChromeSafari*/
         }
         #html{
-            width: 50vw;
-            max-height:100vh;
+            width: 100vw;
+            max-height:50vh;
             overflow: hidden;
             position: fixed;
-            top: 0;
-            left: 50%;
+            top: 50%;
+            left: 0;
 
         }
         #demo2{
             display: none;
         }
-        
-        /*媒体查询*/
-        @media screen and (min-width:500px) {
-            body{
-                font-size: 22px;
-                line-height: 1.8;
-            }
-            #demo{
-                width: 100vw;
-                height: 46vh;
-            }
-            #html{
-                width: 100vw;
-                max-height:50vh;
-                overflow: hidden;
-                position: fixed;
-                top: 50%;
-                left: 0;
-            }
-            .nose{
-                top: 20%;
-            }
-
+        #buttons{
+            position: fixed;
+            top: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+            padding-top: 10px;
+            font-size: 20px;
+            color: #666;
         }
+        #buttons >button{
+            margin-bottom: 10px;
+            padding: 4px 10px;
+            border: 1px solid #eee;
+            outline: none;
+        }
+        #buttons >button.active{
+            background-color: #ffdb00;
+            color: black;
+        }
+
     </style>
 </head>
 <body>
-<div id="demo2"></div>
+<style id="demo2"></style>
 <div id="demo">
 </div>
 <div id="buttons">
     <button id="btnPause">暂停</button>
-    <button id="btnPlay">播放</button>
+    <button id="btnPlay" class="active">播放</button>
     <button id="btnSlow">慢速</button>
     <button id="btnInter">中速</button>
     <button id="btnSpeed">快速</button>
